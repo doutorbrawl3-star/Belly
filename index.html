@@ -6,14 +6,14 @@
     <title>Para Isabelly</title>
     <style>
         :root {
-            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #2e1042 100%);
             --glass-bg: rgba(255, 255, 255, 0.03);
             --glass-border: rgba(255, 255, 255, 0.08);
             --glass-blur: blur(16px);
             --text-primary: #f8fafc;
             --text-secondary: #cbd5e1;
-            --accent: #fbbf24; /* Dourado elegante */
-            --accent-glow: rgba(251, 191, 36, 0.3);
+            --accent: #fbbf24; /* Dourado minimalista */
+            --accent-glow: rgba(251, 191, 36, 0.25);
         }
 
         * {
@@ -31,10 +31,9 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            perspective: 1000px;
         }
 
-        /* Fundo Animado de Partículas */
+        /* Fundo com Partículas Sutis */
         .background-canvas {
             position: absolute;
             top: 0;
@@ -45,29 +44,27 @@
             pointer-events: none;
         }
 
-        /* Container Principal */
+        /* Container do Cartão */
         .container {
             position: relative;
             z-index: 2;
             width: 90%;
-            max-width: 540px;
+            max-width: 500px;
             padding: 2px;
             border-radius: 24px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.01));
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
 
-        /* Cartão Glassmorphism */
+        /* Glassmorphism Premium */
         .card {
             background: var(--glass-bg);
             backdrop-filter: var(--glass-blur);
             -webkit-backdrop-filter: var(--glass-blur);
             border: 1px solid var(--glass-border);
             border-radius: 22px;
-            padding: 40px 30px;
+            padding: 45px 35px;
             text-align: center;
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(15px);
             transition: opacity 1s ease, transform 1s ease;
         }
 
@@ -76,7 +73,6 @@
             transform: translateY(0);
         }
 
-        /* Telas de Navegação */
         .screen {
             display: none;
         }
@@ -85,25 +81,17 @@
             display: block;
         }
 
-        /* Tipografia e Textos */
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.4rem;
             font-weight: 700;
-            letter-spacing: -0.03em;
-            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+            margin-bottom: 25px;
             background: linear-gradient(to right, #ffffff, #e2e8f0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .subtitle {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-
+        /* Texto Autoral e Sincero */
         .letter-text {
             font-size: 1.15rem;
             color: var(--text-secondary);
@@ -114,7 +102,7 @@
         }
 
         .letter-text p {
-            margin-bottom: 18px;
+            margin-bottom: 20px;
             opacity: 0;
             transform: translateY(10px);
             transition: opacity 0.8s ease, transform 0.8s ease;
@@ -130,7 +118,7 @@
             font-weight: 500;
         }
 
-        /* Botões Premium */
+        /* Botões */
         .btn {
             background: rgba(255, 255, 255, 0.05);
             color: var(--text-primary);
@@ -142,9 +130,6 @@
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             outline: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
         }
 
         .btn:hover {
@@ -164,19 +149,18 @@
         .btn-accent:hover {
             background: #fcd34d;
             box-shadow: 0 0 25px var(--accent-glow);
-            color: #0f172a;
         }
 
-        /* Responsividade para Celular */
+        /* Ajuste Mobile */
         @media (max-width: 480px) {
             .card {
-                padding: 35px 20px;
+                padding: 35px 22px;
             }
             h1 {
-                font-size: 2rem;
+                font-size: 2.1rem;
             }
             .letter-text {
-                font-size: 1.05rem;
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -188,46 +172,47 @@
     <div class="container">
         <div class="card" id="mainCard">
             
+            <!-- Entrada -->
             <div class="screen active" id="screen1">
                 <h1>Oi, Isabelly ✨</h1>
-                
-                <button class="btn btn-accent" onclick="nextScreen()">Abrir mensagem</button>
+                <div style="height: 25px;"></div>
+                <button class="btn btn-accent" onclick="nextScreen()">Abrir</button>
             </div>
 
+            <!-- Declaração Direta e Sincera -->
             <div class="screen" id="screen2">
                 <div class="letter-text" id="letterContent">
-                
-                    <p>Não sei se você se dá conta disso, mas a sua inteligência, o seu jeito leve de levar as coisas e a forma como você se dedica — até te vendo jogar <span class="highlight">vôlei</span> e brilhando em quadra — são coisas que eu admiro profundamente.</p>
-                    <p>Além de ser incrivelmente <span class="highlight">linda</span>, você tem uma energia única. O seu jeitinho autêntico, a sua companhia e o nosso papo têm o poder incrível de melhorar qualquer dia meu.</p>
-                    <p>Gosto muito de você, Isabelly. De verdade. E achei que a melhor forma de te dizer isso era construindo algo exclusivo, assim como você é.</p>
+                    <p>Queria muito te dizer que você é <span class="highlight">linda</span> e que eu gosto de verdade de você.</p>
+                    <p>Você é uma pessoa incrivelmente legal, muito inteligente e eu admiro demais o quanto você é boa no vôlei.</p>
+                    <p>Conversar com você tem o poder de melhorar o meu dia, e eu admiro muito cada detalhe do seu jeitinho.</p>
                 </div>
-                <button class="btn" onclick="resetScreen()">Ler novamente</button>
+                <button class="btn" onclick="resetScreen()">Voltar</button>
             </div>
 
         </div>
     </div>
 
     <script>
-        // Animação de entrada do Cartão Principal
+        // Aparição do cartão inicial
         window.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 document.getElementById('mainCard').classList.add('visible');
             }, 300);
         });
 
-        // Controle de Telas e Transições
+        // Transição de telas
         function nextScreen() {
             const s1 = document.getElementById('screen1');
             const s2 = document.getElementById('screen2');
             
             s1.style.opacity = '0';
-            s1.style.transition = 'opacity 0.5s ease';
+            s1.style.transition = 'opacity 0.4s ease';
             
             setTimeout(() => {
                 s1.classList.remove('active');
                 s2.classList.add('active');
                 animateLetter();
-            }, 500);
+            }, 400);
         }
 
         function resetScreen() {
@@ -241,22 +226,21 @@
             s1.style.opacity = '1';
         }
 
-        // Animação do texto aparecendo em blocos suaves
+        // Animação de surgimento das frases
         function animateLetter() {
             const paragraphs = document.querySelectorAll('.letter-text p');
             paragraphs.forEach((p, index) => {
                 setTimeout(() => {
                     p.classList.add('show');
-                }, index * 600); // Intervalo sutil entre os parágrafos
+                }, index * 500); 
             });
         }
 
-        // Sistema de Partículas Elegantes no Fundo (Canvas)
+        // Partículas sutis no plano de fundo
         const canvas = document.getElementById('particles');
         const ctx = canvas.getContext('2d');
-
         let particlesArray = [];
-        const numberOfParticles = 40;
+        const numberOfParticles = 35;
 
         function setCanvasSize() {
             canvas.width = window.innerWidth;
@@ -269,15 +253,14 @@
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 0.5;
-                this.speedX = Math.random() * 0.3 - 0.15;
-                this.speedY = Math.random() * 0.3 - 0.15;
-                this.opacity = Math.random() * 0.5 + 0.2;
+                this.size = Math.random() * 1.5 + 0.5;
+                this.speedX = Math.random() * 0.2 - 0.1;
+                this.speedY = Math.random() * 0.2 - 0.1;
+                this.opacity = Math.random() * 0.4 + 0.1;
             }
             update() {
                 this.x += this.speedX;
                 this.y += this.speedY;
-
                 if (this.x > canvas.width) this.x = 0;
                 if (this.x < 0) this.x = canvas.width;
                 if (this.y > canvas.height) this.y = 0;
