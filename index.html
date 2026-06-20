@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,45 +14,52 @@ box-sizing:border-box;
 }
 
 body{
+
 margin:0;
-min-height:100vh;
+height:100vh;
+
 display:flex;
 justify-content:center;
 align-items:center;
-font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#ffd6e7,#d9ecff);
+
+font-family:'Arial',sans-serif;
+
+background:
+linear-gradient(135deg,#ffd1e3,#cfe8ff);
+
 overflow:hidden;
+
 }
 
 
 .card{
 
-width:330px;
+width:350px;
 
-background:rgba(255,255,255,.75);
+background:rgba(255,255,255,0.75);
 
-backdrop-filter:blur(10px);
+backdrop-filter:blur(15px);
 
 padding:30px;
 
-border-radius:25px;
+border-radius:30px;
 
 text-align:center;
 
-box-shadow:0 15px 35px rgba(0,0,0,.15);
+box-shadow:0 20px 50px rgba(0,0,0,.2);
 
-animation:entrar 1s;
+animation:entrada 1.5s;
 
 }
 
 
-@keyframes entrar{
+@keyframes entrada{
 
 from{
 
 opacity:0;
 
-transform:translateY(40px);
+transform:translateY(60px) scale(.8);
 
 }
 
@@ -59,40 +67,48 @@ to{
 
 opacity:1;
 
-transform:translateY(0);
+transform:translateY(0) scale(1);
 
 }
 
 }
+
 
 
 h1{
 
-color:#4d7cff;
+color:#4c7cff;
+
+font-size:30px;
 
 }
+
 
 
 p{
 
 color:#555;
 
-line-height:1.5;
+font-size:17px;
+
+line-height:1.6;
 
 }
 
 
+
 button{
+
+
+background:linear-gradient(45deg,#4c7cff,#7aa8ff);
 
 border:0;
 
-padding:13px 25px;
-
-border-radius:20px;
-
-background:#4d7cff;
-
 color:white;
+
+padding:14px 30px;
+
+border-radius:30px;
 
 font-size:16px;
 
@@ -100,21 +116,42 @@ cursor:pointer;
 
 transition:.3s;
 
+
 }
 
 
 button:hover{
 
-transform:scale(1.08);
+transform:scale(1.1);
 
 }
 
 
-#msg{
+
+#texto{
 
 display:none;
 
 margin-top:20px;
+
+animation:aparecer 1s;
+
+}
+
+
+@keyframes aparecer{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
 
 }
 
@@ -124,9 +161,12 @@ margin-top:20px;
 
 position:absolute;
 
-animation:cair 5s linear infinite;
+font-size:25px;
+
+animation:cair 5s linear;
 
 }
+
 
 
 @keyframes cair{
@@ -135,11 +175,15 @@ from{
 
 transform:translateY(-10vh);
 
+opacity:1;
+
 }
 
 to{
 
 transform:translateY(110vh);
+
+opacity:0;
 
 }
 
@@ -147,6 +191,7 @@ transform:translateY(110vh);
 
 
 </style>
+
 
 </head>
 
@@ -156,11 +201,14 @@ transform:translateY(110vh);
 
 <div class="card">
 
-<h1>Oi, Isabelly </h1>
+
+<h1>Oi, Isabelly 😊💙</h1>
 
 
 <p>
-Fiz uma coisa que queria te mostrar.
+
+Eu fiz uma coisinha aqui porque queria te falar algo...
+
 </p>
 
 
@@ -171,22 +219,39 @@ Abrir 💙
 </button>
 
 
-<div id="msg">
+
+<div id="texto">
+
 
 <p>
 
-Eu queria te falar que admiro muito você.<br><br>
+Isabelly,
 
-Você é uma pessoa muito legal, inteligente e gosto muito do seu jeito.<br><br>
+<br><br>
 
-Gosto de conversar com você, porque melhora meu dia 😊<br><br>
+Eu queria que você soubesse que eu admiro muito você.
 
-Também acho muito legal sua dedicação no vôlei.
+<br><br>
+
+Você é uma pessoa muito legal, inteligente e linda.
+
+<br><br>
+
+Eu acho muito incrível o seu jeito de ser e admiro muito você, até no vôlei, pela sua dedicação.
+
+<br><br>
+
+Gosto muito de conversar com você, porque conversar contigo melhora meu dia 😊
+
+<br><br>
+
+Eu gosto do seu jeitinho e da pessoa que você é.
+
+<br><br>
+
+Obrigado por ser alguém tão especial 💙
 
 </p>
-
-
-<h2>💙</h2>
 
 
 </div>
@@ -202,10 +267,10 @@ Também acho muito legal sua dedicação no vôlei.
 function abrir(){
 
 
-document.getElementById("msg").style.display="block";
+document.getElementById("texto").style.display="block";
 
 
-for(let i=0;i<15;i++){
+for(let i=0;i<25;i++){
 
 
 let h=document.createElement("div");
@@ -226,12 +291,12 @@ h.style.animationDelay=Math.random()*2+"s";
 document.body.appendChild(h);
 
 
-
 setTimeout(()=>{
 
 h.remove();
 
 },5000);
+
 
 
 }
