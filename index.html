@@ -1,73 +1,95 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Para Isabelly 💙</title>
+<title>Isabelly</title>
 
 <style>
 
 *{
+margin:0;
+padding:0;
 box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
 }
+
 
 body{
 
-margin:0;
 height:100vh;
 
 display:flex;
 justify-content:center;
 align-items:center;
 
-font-family:'Arial',sans-serif;
-
 background:
-linear-gradient(135deg,#ffd1e3,#cfe8ff);
+linear-gradient(120deg,#eaf2ff,#ffffff,#dce8ff);
 
-overflow:hidden;
+background-size:300% 300%;
+
+animation:fundo 10s infinite;
 
 }
 
 
-.card{
+@keyframes fundo{
 
-width:350px;
+0%{
+background-position:0% 50%;
+}
 
-background:rgba(255,255,255,0.75);
+50%{
+background-position:100% 50%;
+}
 
-backdrop-filter:blur(15px);
+100%{
+background-position:0% 50%;
+}
 
-padding:30px;
+}
 
-border-radius:30px;
+
+
+.container{
+
+width:380px;
+
+background:rgba(255,255,255,.85);
+
+padding:40px;
+
+border-radius:25px;
 
 text-align:center;
 
-box-shadow:0 20px 50px rgba(0,0,0,.2);
+box-shadow:0 25px 60px rgba(0,0,0,.15);
 
-animation:entrada 1.5s;
+animation:subir 1s;
 
 }
 
 
-@keyframes entrada{
+
+@keyframes subir{
 
 from{
 
 opacity:0;
 
-transform:translateY(60px) scale(.8);
+transform:translateY(50px);
 
 }
+
 
 to{
 
 opacity:1;
 
-transform:translateY(0) scale(1);
+transform:translateY(0);
 
 }
 
@@ -77,21 +99,21 @@ transform:translateY(0) scale(1);
 
 h1{
 
-color:#4c7cff;
+font-size:35px;
 
-font-size:30px;
+color:#355cff;
+
+margin-bottom:20px;
 
 }
 
 
 
-p{
+.sub{
 
-color:#555;
+color:#777;
 
-font-size:17px;
-
-line-height:1.6;
+font-size:16px;
 
 }
 
@@ -99,16 +121,17 @@ line-height:1.6;
 
 button{
 
+margin-top:30px;
 
-background:linear-gradient(45deg,#4c7cff,#7aa8ff);
+padding:15px 40px;
 
-border:0;
-
-color:white;
-
-padding:14px 30px;
+border:none;
 
 border-radius:30px;
+
+background:#355cff;
+
+color:white;
 
 font-size:16px;
 
@@ -116,13 +139,13 @@ cursor:pointer;
 
 transition:.3s;
 
-
 }
+
 
 
 button:hover{
 
-transform:scale(1.1);
+transform:scale(1.08);
 
 }
 
@@ -132,11 +155,18 @@ transform:scale(1.1);
 
 display:none;
 
-margin-top:20px;
+margin-top:25px;
+
+color:#444;
+
+font-size:17px;
+
+line-height:1.8;
 
 animation:aparecer 1s;
 
 }
+
 
 
 @keyframes aparecer{
@@ -157,64 +187,41 @@ opacity:1;
 
 
 
-.heart{
+.linha{
 
-position:absolute;
+height:1px;
 
-font-size:25px;
+background:#ddd;
 
-animation:cair 5s linear;
-
-}
-
-
-
-@keyframes cair{
-
-from{
-
-transform:translateY(-10vh);
-
-opacity:1;
+margin:25px 0;
 
 }
 
-to{
-
-transform:translateY(110vh);
-
-opacity:0;
-
-}
-
-}
 
 
 </style>
 
-
 </head>
+
 
 
 <body>
 
 
-<div class="card">
+<div class="container">
 
 
-<h1>Oi, Isabelly 😊💙</h1>
+<h1>Isabelly</h1>
 
 
-<p>
-
-Eu fiz uma coisinha aqui porque queria te falar algo...
-
+<p class="sub">
+Eu fiz esse site porque queria te falar uma coisa.
 </p>
 
 
-<button onclick="abrir()">
+<button onclick="mostrar()">
 
-Abrir 💙
+Abrir
 
 </button>
 
@@ -223,33 +230,28 @@ Abrir 💙
 <div id="texto">
 
 
+<div class="linha"></div>
+
+
 <p>
 
-Isabelly,
+Você é uma pessoa muito legal, linda e inteligente.
 
 <br><br>
 
-Eu queria que você soubesse que eu admiro muito você.
+Eu admiro muito seu jeito de ser e a pessoa que você é.
 
 <br><br>
 
-Você é uma pessoa muito legal, inteligente e linda.
+Acho muito incrível sua dedicação e o quanto você é boa no vôlei.
 
 <br><br>
 
-Eu acho muito incrível o seu jeito de ser e admiro muito você, até no vôlei, pela sua dedicação.
+Conversar com você melhora meu dia.
 
 <br><br>
 
-Gosto muito de conversar com você, porque conversar contigo melhora meu dia 😊
-
-<br><br>
-
-Eu gosto do seu jeitinho e da pessoa que você é.
-
-<br><br>
-
-Obrigado por ser alguém tão especial 💙
+Eu admiro seu jeitinho e gosto muito da sua companhia.
 
 </p>
 
@@ -264,48 +266,15 @@ Obrigado por ser alguém tão especial 💙
 <script>
 
 
-function abrir(){
-
+function mostrar(){
 
 document.getElementById("texto").style.display="block";
-
-
-for(let i=0;i<25;i++){
-
-
-let h=document.createElement("div");
-
-
-h.className="heart";
-
-
-h.innerHTML="💙";
-
-
-h.style.left=Math.random()*100+"vw";
-
-
-h.style.animationDelay=Math.random()*2+"s";
-
-
-document.body.appendChild(h);
-
-
-setTimeout(()=>{
-
-h.remove();
-
-},5000);
-
-
-
-}
-
 
 }
 
 
 </script>
+
 
 
 </body>
